@@ -1,9 +1,13 @@
+<!-- panvimdoc-ignore-start -->
+
 # feline.nvim
 
 A minimal, stylish and customizable statusline for Neovim written in Lua
 
 Requires Neovim >= 0.5
 
+
+<!-- panvimdoc-ignore-end -->
 ## About
 
 Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/galaxyline.nvim), but being more minimal and keeping complete customizability in mind. Feline is less of a statusline unto itself but more of a framework for you to easily build your own statusline on, while being able to tweak every tiny bit to your heart's content. But for those who just want to get stuff done, Feline also provides a default statusline which should fit the needs of most people.
@@ -12,7 +16,8 @@ Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/g
 
 - Ease-of-use.
 - Complete customizability over every component.
-- Built-in providers for things like vi-mode, file info, file size, cursor position, diagnostics (using [Neovim's buiilt-in LSP](https://neovim.io/doc/user/lsp.html)), git branch and diffs (using [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim/)), etc.
+- Built-in providers for things like vi-mode, file info, file size, cursor position, diagnostics
+(using [Neovim's built-in LSP](https://neovim.io/doc/user/lsp.html)), git branch and diffs (using [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim/)), etc.
 - Minimalistic, only provides the bare minimum and allows the user to build their own components very easily.
 
 ## Requirements
@@ -24,6 +29,8 @@ Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/g
   - [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons/) - For icon support
   - [A patched font](https://github.com/ryanoasis/nerd-fonts/) - For icon support
   - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim/) - For git info
+
+<!-- panvimdoc-ignore-start -->
 
 ## Screenshots
 
@@ -66,6 +73,8 @@ Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/g
 
 **NOTE: You can add your own configuration to this list. If you're interested, simply make a pull request and I'll add it.**
 
+<!-- panvimdoc-ignore-end -->
+
 ## How to install
 
 ### Install latest stable release
@@ -100,7 +109,9 @@ Plug 'famiu/feline.nvim', { 'tag': 'v0.1' }
 
 ### Install from develop branch
 
-**NOTE:** The develop branch is intended for those who either wish to contribute to Feline or want the absolute bleeding edge version of Feline. The develop branch may contain changes that have not been tested thoroughly and therefore stability is not guaranteed. Moreover, commit history of the develop branch may be rewritten at any time. So use it at your own risk.
+**NOTE:** The develop branch is intended for those who either wish to contribute to Feline or want the absolute bleeding edge version of Feline.
+The develop branch may contain changes that have not been tested thoroughly and therefore stability is not guaranteed.
+Moreover, commit history of the develop branch may be rewritten at any time. So use it at your own risk.
 
 - [packer.nvim](https://github.com/wbthomason/packer.nvim/):
 
@@ -134,7 +145,8 @@ require('feline').setup({
 })
 ```
 
-NOTE: This is also the configuration used by default if you don't have `nvim-web-devicons`. You don't have to specify it manually in case you don't have `nvim-web-devicons`. In that case, Feline will detect that you don't have `nvim-web-devicons` and automatically pick the `noicon` preset.
+NOTE: This is also the configuration used by default if you don't have `nvim-web-devicons`. You don't have to specify it manually in case you don't have `nvim-web-devicons`.
+In that case, Feline will detect that you don't have `nvim-web-devicons` and automatically pick the `noicon` preset.
 
 You can also make minor tweaks like changing the default foreground and background color like this:
 
@@ -153,7 +165,7 @@ If you don't mind getting your hands dirty, then I recommend making your own sta
 
 #### Components
 
-Inside the `components` table, there needs to be two tables, `active` and `inactive`, which will dictate whether the component is a part of the statusline when it's in an active window or an inactive window. And inside each of the `active` and `inactive` tables, you can put any amount of tables, each of which will indicate a section of the statusline. For example, if you want two sections (left and right), you can put two tables inside each of the `active` and `inactive` tables. If you want three sections (left, mid and right), you can put three tables inside each of the `active` and `inactive` tables. There is no limit to the amount of sections you can have. It's also possible to have a different amount of sections for the `active` and `inactive` statuslines. 
+Inside the `components` table, there needs to be two tables, `active` and `inactive`, which will dictate whether the component is a part of the statusline when it's in an active window or an inactive window. And inside each of the `active` and `inactive` tables, you can put any amount of tables, each of which will indicate a section of the statusline. For example, if you want two sections (left and right), you can put two tables inside each of the `active` and `inactive` tables. If you want three sections (left, mid and right), you can put three tables inside each of the `active` and `inactive` tables. There is no limit to the amount of sections you can have. It's also possible to have a different amount of sections for the `active` and `inactive` statuslines.
 
 So first, in your init.lua file, you have to initialize the components table
 
@@ -612,8 +624,9 @@ After that, you can just modify the components and call [the setup function](#th
 ### Default providers
 
 Feline by default has some built-in providers to make your life easy. They are:
-|Name|Description|
---|--
+
+|Name              |Description                                  |
+|------------------|---------------------------------------------|
 |[`vi_mode`](#vi-mode)|Current vi_mode|
 |`position`|Get line and column number of cursor|
 |`line_percentage`|Current line percentage|
@@ -679,7 +692,7 @@ Default:`'🔒'`
     For example: If you have three buffers with the paths `'/home/user/file.lua'`, `'/home/user/dir1/file.lua'` and `'/home/user/dir2/file.lua'`, Feline will show the names `'user/file.lua'`, `'dir1/file.lua'` and `'dir2/file.lua'` for them, respectively.<br>
     If there's no files that share the same name, it behaves the same as `'base-only'`.
     - `'unique-short'`: Combination of `'unique'` and `'short-path'`.
-    
+
 
     <br>Default: `'base-only'`
 
@@ -703,13 +716,13 @@ In case none of the default providers do what you want, it's very easy to add yo
 
 ### Common issues
 
-#### Feline crashes or disappears for seemingly no reason
+> Feline crashes or disappears for seemingly no reason
 
 This can be caused if you forget to remove your other statusline plugins after installing Feline. Make sure all other statusline plugins are removed before you install Feline, that should fix the issue.
 
 ### Tips and tricks
 
-#### Reset highlight
+> Reset highlight
 
 If, for some reason, you want to clear all highlights that Feline sets (useful if you want to reload your entire Neovim config which may mess up highlights), you can do:
 
@@ -719,7 +732,7 @@ require('feline').reset_highlights()
 
 And then Feline will automatically regenerate those highlights when it needs them, so you don't have to worry about setting the highlights yourself.
 
-#### Disable inactive statusline
+> Disable inactive statusline
 
 If you want, you can just disable the inactive statusline by doing:
 
@@ -760,6 +773,8 @@ components.inactive = {
 }
 ```
 
+<!-- panvimdoc-ignore-start -->
+
 ### Reporting issues or feature requests
 
 If you have an issue that you can't find the fix to in the documentation or want to request a feature you think is absolutely necessary, feel free to make a new [Issue](https://github.com/famiu/feline.nvim/issues) and I will try my best to look into it. If you want to contribute to Feline, you can make a Pull Request. For more details, please see: [CONTRIBUTING](CONTRIBUTING.md)
@@ -780,9 +795,13 @@ Lastly, anyone is welcomes to contribute to Feline, either by making an Issue or
 
 And this plugin is named after cats, you won't get that anywhere else.
 
+<!-- panvimdoc-ignore-end -->
+
 ## LICENSE
 
 Feline is licensed under GNU GPLv3. For more info, see: [LICENSE.md](LICENSE.md).
+
+<!-- panvimdoc-ignore-start -->
 
 ## Miscellaneous
 
@@ -798,3 +817,5 @@ Feline uses [Semantic Versioning](https://semver.org/) for its version names. Th
 
 If you liked this plugin, also check out:
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) - Delete Neovim buffers without losing your window layout.
+
+<!-- panvimdoc-ignore-end -->
