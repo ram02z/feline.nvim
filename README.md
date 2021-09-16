@@ -25,6 +25,7 @@ Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/g
   - [A patched font](https://github.com/ryanoasis/nerd-fonts/) - For icon support
   - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim/) - For git info
 
+<!-- panvimdoc-ignore-start -->
 ## Screenshots
 
 **NOTE: Some of these configurations may be outdated and may need to be changed prior to use.**
@@ -65,6 +66,7 @@ Feline is a lua statusline inspired by [galaxyline](https://github.com/glepnir/g
 ![image](https://user-images.githubusercontent.com/54072354/117869424-65d51500-b260-11eb-898c-0a0b987a6275.png)
 
 **NOTE: You can add your own configuration to this list. If you're interested, simply make a pull request and I'll add it.**
+<!-- panvimdoc-ignore-end -->
 
 ## How to install
 
@@ -760,6 +762,7 @@ components.inactive = {
 }
 ```
 
+<!-- panvimdoc-ignore-start -->
 ### Reporting issues or feature requests
 
 If you have an issue that you can't find the fix to in the documentation or want to request a feature you think is absolutely necessary, feel free to make a new [Issue](https://github.com/famiu/feline.nvim/issues) and I will try my best to look into it. If you want to contribute to Feline, you can make a Pull Request. For more details, please see: [CONTRIBUTING](CONTRIBUTING.md)
@@ -779,11 +782,13 @@ Feline is extremely easy to configure and well-documented, which allows anyone t
 Lastly, anyone is welcomes to contribute to Feline, either by making an Issue or through a Pull Request (see [CONTRIBUTING](CONTRIBUTING.md) for further information). Any kind of contribution starting from fixing a minor typo to adding a massive new feature is welcome.
 
 And this plugin is named after cats, you won't get that anywhere else.
+<!-- panvimdoc-ignore-end -->
 
 ## LICENSE
 
 Feline is licensed under GNU GPLv3. For more info, see: [LICENSE.md](LICENSE.md).
 
+<!-- panvimdoc-ignore-start -->
 ## Miscellaneous
 
 ### Naming
@@ -798,3 +803,4 @@ Feline uses [Semantic Versioning](https://semver.org/) for its version names. Th
 
 If you liked this plugin, also check out:
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) - Delete Neovim buffers without losing your window layout.
+<!-- panvimdoc-ignore-end -->
